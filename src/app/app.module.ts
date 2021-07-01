@@ -24,11 +24,10 @@ import { AppComponent } from './app.component';
 
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
-import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
-import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
+// import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 import { MessageComponent } from './message/message.component';
 import { LancamentosModule } from './lancamentos/lancamentos.module';
+import { PessoasModule } from './pessoas/pessoas.module';
 
 registerLocaleData(localePt);
 
@@ -37,8 +36,6 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     NavbarComponent,
-    PessoasPesquisaComponent,
-    PessoaCadastroComponent,
     MessageComponent,
   ],
   imports: [
@@ -61,7 +58,8 @@ registerLocaleData(localePt);
 
     MessagesModule,
     MessageModule,
-    LancamentosModule
+    LancamentosModule,
+    PessoasModule
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'pt' } ],
   bootstrap: [AppComponent]
