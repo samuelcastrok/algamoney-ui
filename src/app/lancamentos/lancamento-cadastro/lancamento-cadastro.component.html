@@ -1,0 +1,86 @@
+<div class="container">
+
+  <form #lancamentoForm="ngForm" (ngSubmit)="salvar(lancamentoForm)">
+
+    <div class="p-grid">
+
+      <div class="p-col-12">
+        <h1>Novo Lançamento</h1>
+      </div>
+
+      <div class="p-col-12">
+        <p-selectButton [options]="tipos" #tipo></p-selectButton>
+      </div>
+
+      <div class="p-col-6 p-md-2 p-fluid">
+          <label>Vencimento </label>
+          <!-- <input pInputText type="text"> -->
+          <p-calendar ngModel name="dataVencimento" #dataVencimento="ngModel"
+            dateFormat="dd/mm/yy" [readonlyInput]="false"
+            [showIcon]="false" [required]="true"></p-calendar>
+
+          <!-- <app-message [control]="dataVencimento" error="required"
+            text="Informe uma data de vencimento"></app-message> -->
+      </div>
+
+      <div class="p-col-6 p-md-2 p-fluid ">
+          <label>{{ tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento'}}</label>
+          <p-calendar ngModel #dataRecebimento="ngModel" name="dataRecebimento"
+            dateFormat="dd/mm/yy"></p-calendar>
+      </div>
+
+      <div class="p-col-12 p-md-10 p-fluid">
+          <label>Descrição <!--{{ descricao.errors | json }} --> </label>
+          <input pInputText type="text" name="descricao" ngModel #descricao="ngModel"
+            required minlength="5">
+
+          <!-- <app-message [control]="descricao" error="required"
+            text="Informe uma descrição"></app-message>
+
+          <app-message [control]="descricao" error="minlength"
+            text="Mínimo de {{ descricao.errors?.minlength?.requiredLength | json }} caracteres"></app-message> -->
+
+          <!-- <p-message severity="error" text="Field is required"></p-message> -->
+          <!-- <div class="p.message p.message-error">
+            Informe uma descrição
+          </div> -->
+      </div>
+
+      <div class="p-col-12 p-md-2 p-fluid">
+          <label>Valor</label>
+          <p-inputNumber ngModel name="valor" #valor="ngModel" [minFractionDigits]="2" mode="decimal"
+            prefix="R$ " placeholder="R$ 0,00" [maxFractionDigits]="2" [step]="0.01" [min]="0"
+            [inputStyle]="{'text-align': 'right'}" aria-required="true"></p-inputNumber>
+
+          <!-- <app-message [control]="valor" error="required" text="Informe o valor da despesa"></app-message> -->
+      </div>
+
+      <div class="p-col-12 p-md-6 p-fluid">
+          <label>Categoria <!--{{ categoria.value }}--> </label>
+          <p-dropdown ngModel name="categoria" [options]="categorias"
+            placeholder="Selecione a categoria" [filter]="true" #categoria="ngModel"
+            emptyFilterMessage="Nenhum resultado encontrado" [required]="true"></p-dropdown>
+      </div>
+
+      <div class="p-col-12 p-md-6 p-fluid">
+          <label>Pessoa</label>
+          <p-dropdown ngModel name="pessoa" #pessoa="ngModel" [options]="pessoas"
+            placeholder="Selecione a pessoa" [required]="true"></p-dropdown>
+      </div>
+
+      <div class="p-col-12 p-fluid">
+          <label>Observação</label>
+          <textarea pInputTextarea ngModel name="observacao" #observacao="ngModel" rows="3"></textarea>
+      </div>
+
+      <div class="p-col-12 grupo-botoes">
+        <button pButton type="submit" label="Salvar" [disabled]="!lancamentoForm.valid"></button>
+        <button pButton type="button" label="Novo" class="p-button-info"></button>
+        <a href="javascript:;">Voltar para a pesquisa</a>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>

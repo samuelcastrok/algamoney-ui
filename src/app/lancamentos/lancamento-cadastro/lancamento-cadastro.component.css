@@ -1,0 +1,19 @@
+.p-button {
+  margin-right: .35em;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+  align-self: center;
+  font-weight: bold;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+.grupo-botoes {
+  display: flex;
+  align-items: center;
+}

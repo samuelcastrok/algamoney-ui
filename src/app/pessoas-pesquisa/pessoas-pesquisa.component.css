@@ -1,0 +1,28 @@
+.opcao-ativar-desativar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.opcao-ativar-desativar a:hover {
+  text-decoration: underline;
+}
+
+.col-estado-header {
+  width: 100px;
+}
+
+.col-status-header {
+  width: 120px;
+}
+
+@media (min-width: 40em) {
+
+  .col-estado-content {
+    text-align: center !important;
+  }
+
+  .col-status-content {
+    text-align: center !important;
+  }
+
+}

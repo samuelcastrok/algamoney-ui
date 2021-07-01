@@ -1,0 +1,86 @@
+<div class="container">
+
+  <form #pessoaForm="ngForm" (ngSubmit)="salvar(pessoaForm)">
+
+    <div class="p-grid" >
+
+      <div class="p-col-12">
+        <h1>Nova Pessoa {{ pessoaForm.valid | json }} </h1>
+      </div>
+
+      <div class="p-col-12 p-fluid">
+        <label>Nome</label>
+        <input pInputText ngModel name="nome" #nome="ngModel" type="text" minlength="5" required >
+        <app-message [control]="nome" error="required" text="Informe um nome"></app-message>
+        <app-message [control]="nome" error="minlength"
+          text="Mínimo de {{ nome.errors?.minlength?.requiredLength | json }} caracteres"></app-message>
+      </div>
+
+    </div>
+
+    <div class="p-grid" >
+
+      <div class="p-col-12 p-md-2 p-fluid">
+        <label>CEP</label>
+        <!-- <input #cep pInputText type="text" id="cep" name="cep" (blur)="consultaCEP(cep.value)" ngModel> -->
+        <p-inputMask #cep="ngModel" mask="99999-999" id="cep" name="cep" (onBlur)="consultaCEP(cep.value)"
+          ngModel [required]="true"></p-inputMask>
+        <app-message [control]="cep" error="required" text="Informe um CEP"></app-message>
+      </div>
+
+    </div>
+
+
+    <div class="p-grid" >
+
+      <div class="p-col-12 p-md-10 p-fluid">
+        <label>Logradouro</label>
+        <input pInputText ngModel type="text" id="logradouro" name="logradouro"
+          [ngModel]="endereco.logradouro" #logradouro="ngModel" required>
+        <app-message [control]="logradouro" error="required"
+          text="Insira um logradouro"></app-message>
+      </div>
+
+      <div class="p-col-12 p-md-2 p-fluid">
+        <label>Número</label>
+        <input pInputText ngModel name="numero" #numero="ngModel" type="text" required>
+        <app-message [control]="numero" error="required" text="Informe o número"></app-message>
+      </div>
+
+      <div class="p-col-12 p-md-6 p-fluid">
+        <label>Complemento</label>
+        <input pInputText type="text">
+      </div>
+
+      <div class="p-col-12 p-md-6 p-fluid">
+        <label>Bairro</label>
+        <input pInputText ngModel #bairro="ngModel" type="text" id="bairro"
+          name="bairro" [ngModel]="endereco.bairro" required>
+          <app-message [control]="bairro" error="required" text="Insira um bairro"></app-message>
+      </div>
+
+      <div class="p-col-12 p-md-10 p-fluid">
+        <label>Cidade</label>
+        <input pInputText ngModel #cidade="ngModel" type="text" id="cidade"
+          name="cidade" [ngModel]="endereco.cidade" required>
+        <app-message [control]="cidade" error="required" text="Insira uma cidade"></app-message>
+      </div>
+
+      <div class="p-col-12 p-md-2 p-fluid">
+        <label>Estado</label>
+        <input pInputText ngModel #uf="ngModel" id="uf" name="uf" type="text"
+          [ngModel]="endereco.uf" required>
+        <app-message [control]="uf" error="required" text="Insira uma UF"></app-message>
+      </div>
+
+      <div class="p-col-12 grupo-botoes">
+        <button pButton type="submit" label="Salvar" [disabled]="!pessoaForm.valid"></button>
+        <button pButton type="button" label="Novo" class="p-button-info"></button>
+        <a href="javascript:;">Voltar para a pesquisa</a>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
