@@ -13,11 +13,11 @@ import { TableModule } from "primeng/table";
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CalendarModule } from "primeng/calendar";
 import { SelectButtonModule } from "primeng/selectbutton";
-import {DropdownModule} from 'primeng/dropdown';
-import {InputMaskModule} from 'primeng/inputmask';
-import {InputNumberModule} from 'primeng/inputnumber';
-import {MessagesModule} from 'primeng/messages';
-import {MessageModule} from 'primeng/message';
+import { DropdownModule }  from 'primeng/dropdown';
+import { InputMaskModule }  from 'primeng/inputmask';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
