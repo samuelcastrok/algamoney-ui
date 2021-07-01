@@ -19,8 +19,8 @@
             dateFormat="dd/mm/yy" [readonlyInput]="false"
             [showIcon]="false" [required]="true"></p-calendar>
 
-          <!-- <app-message [control]="dataVencimento" error="required"
-            text="Informe uma data de vencimento"></app-message> -->
+          <app-message [control]="dataVencimento" error="required"
+            text="Informe uma data de vencimento"></app-message>
       </div>
 
       <div class="p-col-6 p-md-2 p-fluid ">
@@ -34,11 +34,11 @@
           <input pInputText type="text" name="descricao" ngModel #descricao="ngModel"
             required minlength="5">
 
-          <!-- <app-message [control]="descricao" error="required"
+          <app-message [control]="descricao" error="required"
             text="Informe uma descrição"></app-message>
 
           <app-message [control]="descricao" error="minlength"
-            text="Mínimo de {{ descricao.errors?.minlength?.requiredLength | json }} caracteres"></app-message> -->
+            text="Mínimo de {{ descricao.errors?.minlength?.requiredLength | json }} caracteres"></app-message>
 
           <!-- <p-message severity="error" text="Field is required"></p-message> -->
           <!-- <div class="p.message p.message-error">
@@ -52,7 +52,7 @@
             prefix="R$ " placeholder="R$ 0,00" [maxFractionDigits]="2" [step]="0.01" [min]="0"
             [inputStyle]="{'text-align': 'right'}" aria-required="true"></p-inputNumber>
 
-          <!-- <app-message [control]="valor" error="required" text="Informe o valor da despesa"></app-message> -->
+          <app-message [control]="valor" error="required" text="Informe o valor da despesa"></app-message>
       </div>
 
       <div class="p-col-12 p-md-6 p-fluid">
