@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CepServiceService } from '../cep-service.service';
+import { CepServiceService } from '../../cep-service.service';
 
 @Component({
   selector: 'app-pessoa-cadastro',
